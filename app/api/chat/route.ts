@@ -16,7 +16,7 @@ export async function POST(request: NextRequest) {
     return new Response('Invalid request', { status: 400 });
   }
 
-  const apiKey = process.env.SILICONFLOW_API_KEY;
+  const apiKey = import.meta.env.SILICONFLOW_API_KEY;
   if (!apiKey) {
     return new Response('API key not configured', { status: 500 });
   }
